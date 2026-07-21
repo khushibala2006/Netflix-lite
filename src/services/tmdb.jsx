@@ -9,7 +9,7 @@ export async function getPopularMovies(page = 1) {
 
     const data = await response.json();
 
-    return data.results;
+    return data.results || [];
   } catch (error) {
     console.error("Error fetching movies:", error);
     return [];
@@ -24,7 +24,7 @@ export async function searchMovies(searchText) {
 
     const data = await response.json();
 
-    return data.results;
+    return data.results || [];
   } catch (error) {
     console.error("Error searching movies:", error);
     return [];
